@@ -1,0 +1,185 @@
+.cell {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    cursor: pointer;
+    user-select: none;
+    font-weight: 700;
+    font-size: 1.55rem;
+    color: #ffffff;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+    border: 1px solid #00ffff;
+    box-shadow:
+        inset 0 0 6px rgba(0, 255, 255, 0.15),
+        0 0 6px rgba(0, 255, 255, 0.25);
+    position: relative;
+    opacity: 0.5;
+}
+
+.cell:focus-visible {
+    outline: 2px solid #38bdf8;
+    outline-offset: 2px;
+}
+
+.cell:hover {
+    transform: scale(1.02);
+    box-shadow:
+        inset 0 0 12px rgba(0, 255, 255, 0.2),
+        0 0 15px rgba(0, 255, 255, 0.4);
+}
+
+.cell.open {
+    opacity: 1;
+    cursor: default;
+}
+
+.mine {
+    border: 2px solid #94fffa;
+    animation: minePulse 3s ease-in-out infinite;
+}
+
+.detonated {
+    border-color: #ff0080;
+    box-shadow:
+        inset 0 0 12px rgba(255, 0, 128, 0.4),
+        0 0 22px rgba(255, 0, 128, 0.6);
+    animation: detonatedMinePulse 2s infinite;
+    opacity: 1;
+}
+
+.flag {
+    border: 2px solid #00ffff;
+    animation: brightFlagPulse 2s ease-in-out infinite;
+    opacity: 1;
+}
+
+.correctGuess {
+    border-color: #00ff00;
+    animation: correctGuessPulse 2s ease-in-out infinite;
+}
+
+.incorrectGuess {
+    border-color: #ff4040;
+    animation: incorrectGuessPulse 2s ease-in-out infinite;
+}
+
+.revealedMine {
+    border-color: #ff4040;
+    animation: revealedMinePulse 2s ease-in-out infinite;
+}
+
+.number1 { color: #00ffff; }
+.number2 { color: #00ff00; }
+.number3 { color: #ff0080; }
+.number4 { color: #8000ff; }
+.number5 { color: #ff8000; }
+.number6 { color: #00ff80; }
+.number7 { color: #ffffff; }
+.number8 { color: #ff4040; }
+
+.number1,
+.number2,
+.number3,
+.number4,
+.number5,
+.number6,
+.number7,
+.number8 {
+    text-shadow: 0 0 10px currentColor;
+    animation: numberGlow 3s ease-in-out infinite alternate;
+}
+
+.icon {
+    width: 46px;
+    height: 46px;
+    pointer-events: none;
+    filter: drop-shadow(0 0 12px rgba(0, 255, 255, 0.55));
+}
+
+.flag .icon {
+    filter: drop-shadow(0 0 12px rgba(255, 0, 128, 0.75));
+}
+
+.correctGuess .icon {
+    filter: drop-shadow(0 0 12px rgba(0, 255, 0, 0.85));
+}
+
+.incorrectGuess .icon {
+    filter: drop-shadow(0 0 12px rgba(255, 64, 64, 0.85));
+}
+
+@keyframes detonatedMinePulse {
+    0%, 100% {
+        box-shadow:
+            inset 0 0 12px rgba(255, 0, 128, 0.4),
+            0 0 20px rgba(255, 0, 128, 0.6);
+    }
+    50% {
+        box-shadow:
+            inset 0 0 18px rgba(255, 0, 128, 0.6),
+            0 0 28px rgba(255, 0, 128, 0.85);
+    }
+}
+
+@keyframes minePulse {
+    0%, 100% {
+        box-shadow:
+            inset 0 0 10px rgba(148, 255, 250, 0.2),
+            0 0 20px rgba(148, 255, 250, 0.3);
+    }
+    50% {
+        box-shadow:
+            inset 0 0 15px rgba(148, 255, 250, 0.4),
+            0 0 30px rgba(148, 255, 250, 0.5);
+    }
+}
+
+@keyframes brightFlagPulse {
+    0%, 100% {
+        box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(0, 255, 255, 0.8);
+    }
+}
+
+@keyframes correctGuessPulse {
+    0%, 100% {
+        box-shadow: 0 0 15px rgba(0, 255, 0, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(0, 255, 0, 0.8);
+    }
+}
+
+@keyframes incorrectGuessPulse {
+    0%, 100% {
+        box-shadow: 0 0 15px rgba(255, 64, 64, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(255, 64, 64, 0.8);
+    }
+}
+
+@keyframes revealedMinePulse {
+    0%, 100% {
+        box-shadow: 0 0 15px rgba(255, 64, 64, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(255, 64, 64, 0.8);
+    }
+}
+
+@keyframes numberGlow {
+    from {
+        text-shadow: 0 0 6px currentColor;
+    }
+    to {
+        text-shadow: 0 0 16px currentColor, 0 0 24px currentColor;
+    }
+}
+

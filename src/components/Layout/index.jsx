@@ -52,7 +52,7 @@ function Layout() {
       </main>
 
       <footer className={styles.layoutFooter}>
-        <p>&copy; 2025 CS-33 Minesweeper Game. Built with React & Vite.</p>
+        <p>&copy; 2025 CS-31 Minesweeper Game. Built with React & Vite.</p>
       </footer>
     </div>
   )
