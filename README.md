@@ -27,11 +27,6 @@
 | Локальні стилі через **CSS Modules** (`.module.css`) | Done |
 | Ізоляція стилів (не впливають на інші сторінки) | Done |
 
----
-
-## Структура проєкту
-Звісно\! Ось та сама структура файлів, оформлена у стилі **Markdown** для кращої читабельності, з використанням ієрархічних списків та коментарів, як це зазвичай робиться у файлах `README` або технічній документації.
-
 -----
 
 ## 📁 Структура Проєкту: Minesweeper на React
@@ -131,3 +126,14 @@ git commit -m "lab5: повна реалізація Сапера"
 6. Створіть Pull Request
 
 ### Скріншоти
+<img width="1920" height="891" alt="image" src="https://github.com/user-attachments/assets/a6738c1c-ec02-4b88-b9a2-4e7a38d5b342" />
+
+<img width="1766" height="865" alt="image" src="https://github.com/user-attachments/assets/bb7e26c9-1d75-4d32-bc4d-31ac35dccf9e" />
+
+<img width="1226" height="783" alt="image" src="https://github.com/user-attachments/assets/6a1feb66-8eb6-479f-b4e4-199f4de23450" />
+
+<img width="1160" height="892" alt="image" src="https://github.com/user-attachments/assets/ac5a582c-904b-4c06-867c-d02be7a8368e" />
+
+
+
+
