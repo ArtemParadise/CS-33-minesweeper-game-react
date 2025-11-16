@@ -1,82 +1,133 @@
 # CS-33 Minesweeper Game - React
 
-A React-based implementation of the classic Minesweeper game built with Vite for fast development and hot module replacement.
+Реалізація класичної гри **"Сапер"** на **React 19** з використанням **Vite** для швидкої розробки та компонентного підходу.
 
-## Prerequisites
+> **Лабораторна робота №5**  
+> **Студентка:** Kasianova Kate  
+> **Група:** CS-33  
+> **Дата:** 16 листопада 2025
 
-Before you begin, ensure you have the following installed on your system:
-- [Node.js](https://nodejs.org/) (version 22.0 or higher)
-- npm (comes with Node.js)
+---
 
-## Project Setup
+## Мета роботи
 
-1. **Install dependencies**:
-   ```bash
-   npm install
-   ```
+- Опанувати основи **React**: компоненти, стан (`state`), властивості (`props`)
+- Рефакторити JS-гру Minesweeper у **компонентну архітектуру**
+- Навчитися використовувати **CSS Modules** для локальних стилів
+- Забезпечити ізоляцію стилів (не впливати на інші сторінки)
 
-## Running the Project
+---
 
-### Development Mode
+| Завдання | Статус |
+|--------|--------|
+| Особиста директорія `src/components/KasianovaKate` | Done |
+| Роутинг: шлях `/kasianova-kate` | Done |
+| Розбиття на компоненти: `Board`, `Cell`, `Timer`, `MinesCounter`, `StatusMessage`, `GameEndModal` | Done |
+| Управління станом через `useState`, `useEffect` | Done |
+| Локальні стилі через **CSS Modules** (`.module.css`) | Done |
+| Ізоляція стилів (не впливають на інші сторінки) | Done |
 
-To start the development server with hot module replacement:
+---
 
-```bash
-npm run dev
-```
+## Структура проєкту
+Звісно\! Ось та сама структура файлів, оформлена у стилі **Markdown** для кращої читабельності, з використанням ієрархічних списків та коментарів, як це зазвичай робиться у файлах `README` або технічній документації.
 
-The application will be available at `http://localhost:5173` (or another port if 5173 is occupied).
+-----
 
-### Building for Production
-
-To create a production build:
-
-```bash
-npm run build
-```
-
-The built files will be in the `dist` directory.
-
-### Preview Production Build
-
-To preview the production build locally:
-
-```bash
-npm run preview
-```
-
-## Available Scripts
-
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-- `npm run lint` - Run ESLint for code quality checks
-
-## Project Structure
+## 📁 Структура Проєкту: Minesweeper на React
 
 ```
 src/
-├── App.jsx          # Main application component
-├── App.css          # Application styles
-├── main.jsx         # Application entry point
-├── index.css        # Global styles
-└── assets/          # Static assets (images, icons, etc.)
+├── components/
+│   └── KasianovaKate
+│       ├── photo/
+│       │   ├── flag.png                                 # Іконка прапорця
+│       │   └── image-Photoroom.png                        # Іконка міни
+│       │
+│       ├── Board.jsx                                      # Компонент ігрової дошки
+│       ├── Board.module.css                               # Стилі дошки (CSS Module)
+│       │
+│       ├── Cell.jsx                                       # Компонент однієї клітинки
+│       ├── Cell.module.css # Стилі клітинки (CSS Module)
+│       │
+│       ├── GameEndModal.jsx                               # Компонент модального вікна завершення гри
+│       ├── GameEndModal.module.css                        # Стилі модального вікна
+│       │
+│       ├── index.jsx                                      # Експорт всіх компонентів з директорії
+│       │
+│       ├── MinesCounter.jsx                               # Лічильник мін/прапорців
+│       ├── StatusMessage.jsx                              # Повідомлення про статус гри (Win/Loss)
+│       ├── Timer.jsx                                      # Таймер гри
+│       │
+│       └── Minesweeper.jsx # ГОЛОВНИЙ КОНТЕЙНЕР/КОМПОНЕНТ ГРИ (Логіка, State)
+│
+├── pages/
+│   └── Game/
+│       └── index.jsx                                      # Сторінка "Play Game" 
+│
+├── App.jsx                                                #  Основний файл роутингу (додано Route на /kasianova-kate)
+├── main.jsx                                               # Точка входу в застосунок
+└── assets/                                                # Глобальні ресурси (якщо є)
 ```
 
-## Development
+-----
 
-- The project uses Vite for fast development with hot module replacement
-- ESLint is configured for code quality and consistency
-- React 19 with modern hooks and functional components
-- CSS for styling (can be extended with CSS modules or styled-components)
+## Функціонал гри
 
-## Contributing
+- Поле: **9×9**, **10 мін** (початковий рівень)
+- Лівий клік — відкрити клітинку
+- Правий клік — поставити/зняти прапорець
+- Автоматичне відкриття порожніх зон
+- Таймер, лічильник мін
+- Модальне вікно при перемозі/програші
+- Кнопка "Нова гра"
+- Адаптивний дизайн
 
-1. Make your changes
-2. Run `npm run lint` to check for any linting issues
-3. Test your changes in development mode
-4. Submit a pull request
+---
 
-## License
+## Технології
 
-This project is for educational purposes as part of CS-33 coursework.
+| Технологія | Використання |
+|----------|-------------|
+| **React 19** | Функціональні компоненти, хуки |
+| **Vite** | Швидка розробка, HMR |
+| **React Router** | Роутинг до `/kasianova-kate` |
+| **CSS Modules** | Локальні стилі, ізоляція |
+| **JavaScript (ES6+)** | Чисті функції, масиви, алгоритми |
+
+---
+
+## Запуск проєкту
+
+### 1. Встановлення залежностей
+npm install
+
+### 2. Режим розробки
+npm run dev
+
+Відкрий: http://localhost:5173/kasianova-kate
+
+### 3. Збірка для продакшну
+npm run build
+
+npm run preview
+
+### Доступні скрипти
+
+- npm run dev - Запуск розробки
+- npm run build - Збірка продакшну
+- npm run preview - Перегляд збірки
+- npm run lint - Перевірка коду
+
+### Як внести зміни (Contributing)
+
+1. Створіть гілку:
+git checkout -b lab5/Kasianova-Kate-react-saper
+2. Зробіть зміни
+3. Перевірте стиль: npm run lint
+4. Зробіть коміт: git add .
+git commit -m "lab5: повна реалізація Сапера"
+5. Запуште: git push origin lab5/Kasianova-Kate-react-saper
+6. Створіть Pull Request
+
+### Скріншоти
