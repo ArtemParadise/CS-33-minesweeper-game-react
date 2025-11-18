@@ -5,6 +5,15 @@ function Game() {
   const implementations = [
     {
       id: 1,
+      title: "Kasianova Kate Minesweeper",
+      description: "Cyberpunk-styled React port with neon HUD, modal statistics, flood-open logic, and strict flag limits.",
+      author: "Kasianova Kate",
+      link: "/kasianova-kate",
+      difficulty: "Intermediate",
+      status: "Complete"
+    },
+    {
+      id: 2,
       title: "Mock Minesweeper Game",
       description: "A fully functional minesweeper implementation with timer, flagging, and win/lose detection. This serves as an example for students.",
       author: "Example Implementation",
@@ -13,7 +22,7 @@ function Game() {
       status: "Complete"
     },
     {
-      id: 2,
+      id: 3,
       title: "Basic Minesweeper",
       description: "A simple implementation with basic game mechanics",
       author: "Author Name",
@@ -22,7 +31,7 @@ function Game() {
       status: "Complete"
     },
     {
-      id: 3,
+      id: 4,
       title: "Advanced Minesweeper",
       description: "Features timer, high scores, and custom difficulty",
       author: "Author name",
@@ -31,7 +40,7 @@ function Game() {
       status: "In Progress"
     },
     {
-      id: 4,
+      id: 5,
       title: "Minesweeper with Themes",
       description: "Multiple visual themes and sound effects",
       author: "Author name",
