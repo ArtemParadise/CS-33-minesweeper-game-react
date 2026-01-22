@@ -1,0 +1,174 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #d6e4f5;
+  }
+  
+  .game-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 1.8rem;
+    background: linear-gradient(180deg, #e8f1ff, #cbdcff);
+    border-radius: 14px;
+    border: 4px solid #8faee5;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.18),
+      inset 0 0 6px rgba(255, 255, 255, 0.6);
+  }
+  
+  .game-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.7rem 1.2rem;
+    background: #dce8ff;
+    border-radius: 8px;
+    border: 2px solid #8faee5;
+    box-shadow: inset 0 0 4px rgba(255, 255, 255, 0.8);
+  }
+  
+  .flags,
+  .timer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4.2rem;
+    height: 2.5rem;
+    background: #0a1a33;
+    color: #b6d4ff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 6px;
+    box-shadow: 0 3px 8px rgba(10, 26, 51, 0.35);
+  }
+  
+  .start-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.2rem;
+    height: 3.2rem;
+    background: linear-gradient(180deg, #f9fcff, #cbdcff);
+    border-radius: 8px;
+    border: 2px solid #8faee5;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2),
+      inset 0 0 4px rgba(255, 255, 255, 0.7);
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  .start-btn:active {
+    border-color: #7fa0dd;
+    transform: translateY(1px);
+  }
+  
+  .board {
+    display: grid;
+    grid-template-columns: repeat(10, 2.6rem);
+    grid-template-rows: repeat(10, 2.6rem);
+    gap: 4px;
+    padding: 1rem;
+    background: #dce8ff;
+    border-radius: 10px;
+    border: 3px solid #8faee5;
+    box-shadow: inset 0 0 4px rgba(255, 255, 255, 0.8);
+  }
+  
+  .cell {
+    width: 2.6rem;
+    height: 2.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #002e7d;
+    background: linear-gradient(180deg, #f0f6ff, #c8dbff);
+    border-radius: 8px;
+    border-top: 3px solid #ffffff;
+    border-left: 3px solid #ffffff;
+    border-bottom: 3px solid #4b6fb3;
+    border-right: 3px solid #4b6fb3;
+    cursor: pointer;
+    transition: 0.15s;
+  }
+  
+  .cell:hover {
+    background: #e6eeff;
+    transform: translateY(-1px);
+  }
+  
+  .cell.open {
+    background: #f9fbff;
+    border-radius: 8px;
+    border-top: 3px solid #7a99d6;
+    border-left: 3px solid #7a99d6;
+    border-bottom: 3px solid #4b6fb3;
+    border-right: 3px solid #4b6fb3;
+    cursor: default;
+  }
+  
+  .cell.flag {
+    color: transparent;
+    background: #dfe5ff;
+    border-radius: 8px;
+    border-top: 3px solid #a08dff;
+    border-left: 3px solid #a08dff;
+    border-bottom: 3px solid #5640d9;
+    border-right: 3px solid #5640d9;
+  }
+  
+  .cell.flag::after {
+    content: "🚩";
+    font-size: 1.3rem;
+    filter: hue-rotate(220deg) brightness(1.4);
+  }
+  
+  .cell.flag-wrong {
+    background: #d78dff;
+    border-radius: 8px;
+    border-top: 3px solid #ffffff;
+    border-left: 3px solid #ffffff;
+    border-bottom: 3px solid #6e3bbd;
+    border-right: 3px solid #6e3bbd;
+  }
+  
+  .cell.mine {
+    background: #e4d9ff;
+    border-radius: 8px;
+    border-top: 3px solid #b59cff;
+    border-left: 3px solid #b59cff;
+    border-bottom: 3px solid #5033c9;
+    border-right: 3px solid #5033c9;
+  }
+  
+  .cell.mine::after {
+    content: "💣";
+    font-size: 1.3rem;
+    color: #5033c9;
+  }
+  
+  .cell.mine-hit {
+    background: #7a00ff;
+    border-radius: 8px;
+    border-top: 3px solid #ffffff;
+    border-left: 3px solid #ffffff;
+    border-bottom: 3px solid #2b006b;
+    border-right: 3px solid #2b006b;
+  }
+  
+  .cell.mine-hit::after {
+    content: "💣";
+    font-size: 1.3rem;
+    color: white;
+  }
+  
